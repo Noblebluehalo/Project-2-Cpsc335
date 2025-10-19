@@ -7,7 +7,7 @@
 
 ---
 
-## 📘 Project Overview
+## Project Overview
 
 This project implements two algorithms in C++:
 
