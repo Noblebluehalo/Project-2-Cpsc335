@@ -25,7 +25,7 @@ This project implements two algorithms in C++:
 |------|--------------|
 | `knight_capture.cpp` | BFS solution to compute minimum knight turns |
 | `run_length_encoding.cpp` | Run-length encoding implementation |
-| `README.md` | Project documentation |
+
 
 ---
 
