@@ -3,7 +3,8 @@
 **Author:** Joshua Zamora  
 **Language:** C++17  
 **Instructor:** Prof. Sampson Akwafuo  
-**Semester:** Fall 2025  
+**Semester:** Fall 2025 
+**Email:** JoshuaMZamora@csu.fullerton.edu
 
 ---
 
@@ -31,8 +32,4 @@ This project implements two algorithms in C++:
 
 ## Compilation
 
-Use any C++17-compatible compiler:
-
-```bash
-g++ -std=c++17 -O2 -Wall -Wextra -o knight_capture knight_capture.cpp
-g++ -std=c++17 -O2 -Wall -Wextra -o rle run_length_encoding.cpp
+Use any C++17-compatible
