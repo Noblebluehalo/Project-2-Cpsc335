@@ -1,6 +1,7 @@
 // CPSC 335 - Project 2
 // Algorithm 2: String Run Encoding (lowercase letters and spaces; runs > 1 encoded as kx)
 // Author: Joshua Zamora
+// Email: JoshuaMZamora@csu.fullerton.edu
 
 #include <bits/stdc++.h>
 using namespace std;
