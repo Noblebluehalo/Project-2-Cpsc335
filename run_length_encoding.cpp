@@ -3,30 +3,30 @@
 // Author: Joshua Zamora
 // Email: JoshuaMZamora@csu.fullerton.edu
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 using namespace std;
 
 string runEncode(const string& s) {
     if (s.empty()) return "";
     string out;
-    out.reserve(s.size()); // heuristic
+    out.reserve(s.size());
 
     int n = (int)s.size();
     int cnt = 1;
 
     for (int i = 1; i < n; ++i) {
-        if (s[i] == s[i-1]) {
+        if (s[i] == s[i - 1]) {
             ++cnt;
-        } else {
-            if (cnt == 1) out.push_back(s[i-1]);
-            else          out += to_string(cnt) + s.substr(i-1, 1);
+        }
+        else {
+            if (cnt == 1) out.push_back(s[i - 1]);
+            else out += to_string(cnt) + s.substr(i - 1, 1);
             cnt = 1;
         }
     }
-    // flush last run
     if (cnt == 1) out.push_back(s.back());
-    else          out += to_string(cnt) + s.substr(n-1, 1);
-
+    else out += to_string(cnt) + s.substr(n - 1, 1);
     return out;
 }
 
@@ -34,12 +34,17 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    string line, all;
-    // Read whole stdin as one string (keeps spaces)
-    while (getline(cin, line)) {
-        if (!all.empty()) all.push_back('\n');
-        all += line;
+    cout << "Enter text to encode (type 'exit' to quit):\n";
+    string line;
+    while (true) {
+        cout << "> ";
+        getline(cin, line);
+        if (!cin || line == "exit" || line == "quit") break;
+
+        string encoded = runEncode(line);
+        cout << "Encoded: " << encoded << "\n";
     }
-    cout << runEncode(all) << "\n";
+
+    cout << "Goodbye!\n";
     return 0;
 }
