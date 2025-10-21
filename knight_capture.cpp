@@ -1,6 +1,7 @@
 // CPSC 335 - Project 2
 // Algorithm 1: Minimum turns for two cooperating knights to achieve a capture
 // Author: Joshua Zamora
+// Email: JoshuaMZamora@csu.fullerton.edu
 
 #include <bits/stdc++.h>
 using namespace std;
