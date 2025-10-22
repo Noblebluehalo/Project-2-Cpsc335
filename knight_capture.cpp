@@ -10,7 +10,7 @@
 #include <cmath>
 using namespace std;
 
-// Represents the positions of both knights and which one moves next
+// Shows the positions of both knights and which one moves next
 struct State {
     int ax, ay, bx, by; // Positions of knight A and knight B
     int mover;          // 0 = A moves, 1 = B moves
@@ -60,13 +60,13 @@ Result min_turns_knight_capture(pair<int, int> A, pair<int, int> B) {
         return result;
     }
 
-    // Calculate bounding box around the two knights
+    // Calculate the bounding box around the two knights
     int ax = A.first, ay = A.second;
     int bx = B.first, by = B.second;
     int dx = abs(ax - bx);
     int dy = abs(ay - by);
     int span = (dx > dy) ? dx : dy;
-    int pad = 20; // Extra padding around the search area
+    int pad = 20; 
 
     int minX = (ax < bx ? ax : bx) - (span + pad);
     int maxX = (ax > bx ? ax : bx) + (span + pad);
@@ -75,7 +75,7 @@ Result min_turns_knight_capture(pair<int, int> A, pair<int, int> B) {
 
     // BFS data structures
     unordered_set<State, StateHash> vis;       // Keeps track of visited states
-    deque< pair<State, int> > q;               // Queue for BFS (State, plies)
+    deque< pair<State, int> > q;               // Queue
 
     // Starting state: both knights at initial positions, A moves first
     State start = { ax, ay, bx, by, 0 };
@@ -84,8 +84,8 @@ Result min_turns_knight_capture(pair<int, int> A, pair<int, int> B) {
 
     // Breadth-First Search
     while (!q.empty()) {
-        State s = q.front().first; // Current state
-        int plies = q.front().second; // Number of half-moves so far
+        State s = q.front().first; 
+        int plies = q.front().second; 
         q.pop_front();
 
         if (s.mover == 0) { // Knight A moves
