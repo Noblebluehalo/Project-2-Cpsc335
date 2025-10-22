@@ -13,10 +13,10 @@ string runEncode(const string& s) {
     if (s.empty()) return "";
 
     string out;               // Stores the encoded result
-    out.reserve(s.size());    // Reserve memory to improve performance
+    out.reserve(s.size());    
 
     int n = (int)s.size();    // Length of the input string
-    int cnt = 1;              // Counter for repeating characters
+    int cnt = 1;              
 
     // Loop through the string starting from the 2nd character
     for (int i = 1; i < n; ++i) {
@@ -27,10 +27,10 @@ string runEncode(const string& s) {
         else {
         
             if (cnt == 1)
-                out.push_back(s[i - 1]);                  // Single character
+                out.push_back(s[i - 1]);                  
             else
-                out += to_string(cnt) + s.substr(i - 1, 1); // Encode run as number + char
-            cnt = 1;  // Reset counter for next run
+                out += to_string(cnt) + s.substr(i - 1, 1); 
+            cnt = 1;  
         }
     }
 
@@ -50,13 +50,13 @@ int main() {
     cout << "Enter text to encode (type 'exit' to quit):\n";
     string line;
 
-    // Repeatedly get user input until they type exit
+    // get user input until they type exit
     while (true) {
         cout << "> ";
         getline(cin, line); 
         if (!cin || line == "exit" || line == "quit") break; // Exit condition
 
-        // Encode the input line and print the result
+        // the input line and print the result
         string encoded = runEncode(line);
         cout << "Encoded: " << encoded << "\n";
     }
